@@ -12,6 +12,9 @@ const number = document.getElementById("number");
 
 const numbRandomList = [];
 let numbRandom;
+let numUser;
+const numbUserCorrectList = [];
+const result = document.querySelector(".result");
 
 const timing = 30 * 1000;
 console.log(timing);
@@ -29,6 +32,8 @@ number.innerHTML = `Memorizza questi numeri: ${numbRandomList}`;
 // Utilizzo setTimeOut per farli stare su 30 secondi e poi basta
 setTimeout(() => {
   number.innerHTML = "";
+  getNumbUser();
+  result.innerHTML = `Hai indovinato ${numbUserCorrectList.length} numeri: ${numbUserCorrectList}`;
 }, timing);
 
 /*****************
@@ -37,4 +42,18 @@ FUNZIONI
 
 function genNumRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getNumbUser() {
+  for (let i = 0; i < numbRandomList.length; i++) {
+    numUser = parseInt(
+      prompt("Inserisci un numero tra quelli visti che ricordi!")
+    );
+    for (let f = 0; f < numbRandomList.length; f++) {
+      if (numUser == numbRandomList[f]) {
+        numbUserCorrectList.push(numUser);
+      }
+    }
+  }
+  console.log(numbUserCorrectList);
 }
