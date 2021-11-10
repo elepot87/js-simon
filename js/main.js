@@ -13,6 +13,9 @@ const number = document.getElementById("number");
 const numbRandomList = [];
 let numbRandom;
 
+const timing = 30 * 1000;
+console.log(timing);
+
 // Ciclo for per generare 5 numeri casuali e pusharli dentro l'array
 for (let i = 0; i < 5; i++) {
   numbRandom = genNumRandom(1, 100);
@@ -24,6 +27,9 @@ console.log(numbRandomList);
 number.innerHTML = `Memorizza questi numeri: ${numbRandomList}`;
 
 // Utilizzo setTimeOut per farli stare su 30 secondi e poi basta
+setTimeout(() => {
+  number.innerHTML = "";
+}, timing);
 
 /*****************
 FUNZIONI
