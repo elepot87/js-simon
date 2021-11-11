@@ -16,7 +16,7 @@ let numUser;
 const numbUserCorrectList = [];
 const result = document.querySelector(".result");
 
-const timing = 30 * 1000;
+const timing = 2 * 1000;
 console.log(timing);
 
 // Ciclo for per generare 5 numeri casuali e pusharli dentro l'array
